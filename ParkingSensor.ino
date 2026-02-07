@@ -24,16 +24,16 @@
  * DESCRIPTION
  * Parking sensor using a neopixel led ring and distance sensor (HC-SR04).
  * Configure the digital pins used for distance sensor and neopixels below.
- * NOTE! Remeber to feed leds and distance sensor serparatly from your Arduino. 
+ * NOTE! Remember to feed leds and distance sensor separately from your Arduino. 
  * It will probably not survive feeding more than a couple of LEDs. You 
- * can also adjust intesity below to reduce the power requirements.
+ * can also adjust intensity below to reduce the power requirements.
  * 
  * Sends parking status to the controller as a DOOR sensor if SEND_STATUS_TO_CONTROLLER 
  * is defined below. You can also use this _standalone_ without any radio by 
  * removing the SEND_STATUS_TO_CONTROLLER define.
  */
 
-//#define SEND_STATUS_TO_CONTROLLER  // Put a comment on this line for standalone mode
+//#define SEND_STATUS_TO_CONTROLLER  // Uncomment to enable MySensors network mode (agent reports to controller). Leave commented for standalone mode (no network required).
 
 #include <Adafruit_NeoPixel.h>
 #include <NewPing.h>
@@ -56,7 +56,7 @@
 #define ECHO_PIN     2  // Arduino pin tied to echo pin on the ultrasonic sensor.
 
 #define NUMPIXELS      24 // Number of nexpixels in ring/strip
-#define MAX_INTESITY   20  // Intesity of leds (in percentage). Remeber more intesity requires more power.
+#define MAX_INTESITY   20  // Intensity of leds (in percentage). Remember more intensity requires more power.
 
 // The maximum rated measuring range for the HC-SR04 is about 400-500cm.
 #define MAX_DISTANCE 100 // Max distance we want to start indicating green (in cm)
